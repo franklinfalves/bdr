@@ -19,54 +19,55 @@ class Action extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	
-	public function __construct()
+	  public function __construct()
     {
-          parent::__construct();
-          $this->load->model("task_model");
+      parent::__construct();
+      $this->load->model("task_model");
     }
 	
   	public function read(){
-       $data = array(
-			'wData'=> $this->task_model->read()
-		);
+      $data = array(
+			 'wData'=> $this->task_model->read()
+		  );
 
-       $this->load->view('list', $data);
+      $this->load->view('list', $data);
     }
 
     public function post(){
     	$data = array(
-    	   'title' 		 => $this->input->post('title'),
-           'description' => $this->input->post('description'),
-           'priority' 	 => $this->input->post('priority')
-         );
-    	$this->task_model->insert($data);
+    	  'title' 		  => $this->input->post('title'),
+        'description' => $this->input->post('description'),
+        'priority' 	  => $this->input->post('priority')
+      );
+    	
+      $this->task_model->insert($data);
     	$this->read();
    	}
 
    	public function update(){
-        $id = $this->uri->segment(3);
+      $id = $this->uri->segment(3);
 
-        $data = array(
-    	   'title' 		 => $this->input->post('title'),
-           'description' => $this->input->post('description'),
-           'priority' 	 => $this->input->post('priority')
-        );
+      $data = array(
+    	  'title' 		  => $this->input->post('title'),
+        'description' => $this->input->post('description'),
+        'priority' 	  => $this->input->post('priority')
+      );
 
-        $this->task_model->update($id,$data);
-        $this->read();           
+      $this->task_model->update($id,$data);
+      $this->read();           
     }
 
     public function delete(){
-       $id = $this->uri->segment(3);
-       $this->task_model->delete($id);
-       $this->read();
+      $id = $this->uri->segment(3);
+      $this->task_model->delete($id);
+      $this->read();
     }
 
     public function get($id){
-       $data = array(
-			'wData'=> $this->task_model->read($id)
-		);
-       $this->load->view('update', $data);
+      $data = array(
+			 'wData'=> $this->task_model->read($id)
+		  );
+      $this->load->view('update', $data);
     }
 
     public function cad(){

@@ -1,4 +1,4 @@
-# Teste de BDR – Analista Desenvolvedor Home Office  - Franklin Alves
+# Teste BDR – Analista Desenvolvedor Home Office  - Franklin Alves
 
 ## Questão 1 - Pasta "questao1"
 * Escreva um programa que imprima números de 1 a 100. Mas, para múltiplos de 3 imprima “Fizz” em vez do número e para múltiplos de 5 imprima “Buzz”. Para números múltiplos de ambos (3 e 5), imprima “FizzBuzz”.
@@ -66,8 +66,10 @@ class MyUserClass {
 
 
 ### Instalação
-* Criação de um Banco de Dados em um servidor próprio, assim, passando os parâmentros de conexão corretamente para os parâmetros da classe, e logo após criar a tabela com um insert válido para teste, segue abaixo.
+* Criação de um Banco de Dados em um servidor próprio, assim, passando os parâmentros de conexão corretamente para os parâmetros da classe, e logo após criar a base e tabela com um insert válido para teste, segue abaixo.
 ```
+CREATE DATABASE bdr;
+
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) DEFAULT NULL,
@@ -91,8 +93,8 @@ Diferenciais:
 
 ### Solução: 
 * Fazer a importação do arquivo bdr.sql onde consta uma tabela task, para inclusão de atividades.
-- Operações do API Index, View, Add, Edit e Delete
-- Desenvolvido em Codeinigter
+* Operações do API Index, View, Add, Edit e Delete
+* Desenvolvido em Codeinigter
 
 ### Requisitos
 * PHP 5.6.0 ou superior.
